@@ -1,8 +1,68 @@
 .main {
     background-color: rgb(172, 217, 235);
     height: 89vh;
+    
 }
 
 .content {
     padding: 40px 400px;
+    opacity: 1;
 }
+
+.seek {
+    margin: -70px 400px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    margin-top: 5px;
+    width: 600px;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(42, 125, 158);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-left: 100px;
+    width: 15px;
+    height: 15px;
+    background: rgb(42, 125, 158);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 250px;
+    height: 25px;
+    background: rgb(42, 125, 158);
+    cursor: pointer;
+  }
+
+  .box {
+    background-color: #999;
+    margin: -145px 50px;
+    width: 180px;
+    height: 145px;
+    opacity: 2;
+    position: fixed;
+    display: none;
+  }

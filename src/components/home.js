@@ -22,6 +22,7 @@ const Home = () => {
                 </Navbar>
       
                <VideoPlayer />
+               
                    
         </div>
     )
