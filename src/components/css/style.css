@@ -1,21 +1,26 @@
 .main {
     background-color: rgb(172, 217, 235);
-    height: 89vh;
+    height: 92vh;
     
 }
 
 .content {
-    padding: 40px 400px;
+    padding: 0px 400px;
     opacity: 1;
 }
 
 .seek {
-    margin: -70px 400px;
+    margin: 0px 400px;
 }
+
+.control {
+  padding: 10px 400px;
+  display: inline-flex;
+} 
 
 .slider {
     -webkit-appearance: none;
-    margin-top: 5px;
+    margin: 5px;
     width: 600px;
     height: 15px;
     background: #d3d3d3;
@@ -38,17 +43,6 @@
     cursor: pointer;
     border-radius: 50%;
   }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    margin-left: 100px;
-    width: 15px;
-    height: 15px;
-    background: rgb(42, 125, 158);
-    cursor: pointer;
-    border-radius: 50%;
-  }
   
   .slider::-moz-range-thumb {
     width: 250px;
@@ -57,12 +51,29 @@
     cursor: pointer;
   }
 
-  .box {
-    background-color: #999;
-    margin: -145px 50px;
-    width: 180px;
-    height: 145px;
-    opacity: 2;
-    position: fixed;
+ .box  {
+     background-color: #121212;
+    margin: 5px 50px;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    position: absolute;
     display: none;
+    border-radius: 70%;
   }
+
+
+   .add {
+   margin: 0 0 0 58vh;
+  } 
+
+ .note {
+  opacity: 3;
+  margin: -20px 0 35px 50px;
+  position: relative;
+  display: flex;
+}
+
+.panel {
+   
+} 

@@ -11,18 +11,14 @@ const Home = () => {
         
             <Navbar bg="info" variant="dark" className="justify-content-center">
                     <Navbar.Brand href="#home" >
-                        <img
-                            alt=""
-                            src="/logo.png"
-                            height="50px"
-                            className="d-inline-block align-bot"
-                        />
                          {'Video Player Tool'}
                     </Navbar.Brand>
                 </Navbar>
       
                <VideoPlayer />
-               
+       
+      
+         
                    
         </div>
     )

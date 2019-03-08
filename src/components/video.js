@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ReactPlayer from 'react-player'
-import { ProgressBar } from 'react-bootstrap';
+import Banana from './overlay';
+import classnames from 'classnames';
+
 import './css/style.css';
  
 class VideoPlayer extends Component {
@@ -12,8 +14,9 @@ class VideoPlayer extends Component {
     volume: 0.8,
     played: 0,
     loaded: 0,
-    duration: 0
+    duration: 0,
   }
+
 
   load = url => {
     this.setState({
@@ -35,12 +38,12 @@ class VideoPlayer extends Component {
   }
 
   onPlay = () => {
-    console.log('onPlay')
+  
     this.setState({ playing: true })
   }
 
   onPause = () => {
-    console.log('onPause')
+  
     this.setState({ playing: false })
   }
 
@@ -60,7 +63,7 @@ class VideoPlayer extends Component {
   onProgress = state => {
     // We only want to update time slider if we are not currently seeking
     if (!this.state.seeking) {
-      this.setState(state)
+      this.setState(state) 
     }
   }
 
@@ -68,24 +71,11 @@ class VideoPlayer extends Component {
     this.player = player
   }
 
-  addBox = e => {
-    const d = document.getElementById("content");
-    const box = document.querySelector(".box");
-    
-    if( box.style.display === "none") {
-      box.style.display = "block";
-    } else {
-      box.style.display = "none";
-    }
-   d.innerHTML += "HEllo";
-  }
   
 
-
   render () {
-
-    
-    const { playing, controls, light, volume, played, loaded } = this.state
+  
+    const { playing, controls, light, volume, played } = this.state
 
         return ( 
             <div className="main">
@@ -101,10 +91,11 @@ class VideoPlayer extends Component {
                  onPlay={this.onPlay}
                  onPause={this.onPause}
                  onSeek={e => console.log('onSeek', e)}
-                
+                 
                  />
                 </div>
                 
+                <div className="control">
                 <tr>
               <th>Controls</th>
               <td>
@@ -112,42 +103,50 @@ class VideoPlayer extends Component {
                 <button onClick={this.playPause}>{playing ? 'Pause' : 'Play'}</button>
               </td>
             </tr>
+                </div>
+            
+
           <div className="seek">
           <tr>
               <th>Seek</th>
+              
               <td>
-                <p className="box" id="content"></p>
+   
                 <input class="slider"
                   type='range' min={0} max={1} step='any'
                   value={played}
                   onMouseDown={this.onSeekMouseDown}
                   onChange={this.onSeekChange}
                   onMouseUp={this.onSeekMouseUp}
-                  onClick={this.addBox}
-                />
-              </td>
+                    /> 
+                   <Banana className="note">
+                  
+                  </Banana> 
+              </td>   
             </tr>
           </div>
-           
 
-            <tr>
+            {/* <tr>
               <th>Volume</th>
               <td>
                 <input type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
               </td>
             </tr>
 
-            <tr>
-              <th>Played</th>
-              <td><progress max={1} value={played} /></td>
-            </tr>
+        
+              <tr>
+                <th>Played</th>
+                <td><progress max={1} value={played} /></td>
+              </tr>
 
-            <tr>
-              <th>Loaded</th>
-              <td><progress max={1} value={loaded} /></td>
-            </tr>
-
-
+              <tr>
+                <th>Loaded</th>
+                <td><progress max={1} value={loaded} /></td>
+              </tr> */}
+          
+              <div className="add" >
+                <button  className="btn btn-sm btn-light">Add Bookmark</button>
+                </div>
             </div>
         )
   }
